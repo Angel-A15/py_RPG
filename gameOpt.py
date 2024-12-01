@@ -4,7 +4,7 @@ name: str = input("Hey type your name:")
 print("Hello",name, "welcome to my game!") #This will grab the input from variable name and reference it into the string
 # we need to ask if they want to play
 
-should_we_play = input("Do you want to play?").lower()
+should_we_play = input("Do you want to play? (yes/no)").lower()
     # Varied on the answer, our game will start or end
 
     #Will define is input is the desired answer to start game
@@ -19,12 +19,11 @@ if should_we_play == "y" or should_we_play == "yes":
 
         if weapon == "sword":
             print("Sword was added to inventory.")
-
         elif weapon == "crossbow":
             print("Crossbow was added to inventory.")
-
         else:
             print("Please select an option.")
+
     elif item1 == 'no' or 'n':
         print("You start your path withouth a weapon.")
     else:
@@ -38,9 +37,10 @@ if should_we_play == "y" or should_we_play == "yes":
     if direction == "l" or "left":
         print("Left we go! Unexpectedly, you fall off a cliff...")
         print("THE END")
+        
     elif direction == 'right'or 'r':
-
         print('Right we go! You see a castle over the horizon, but a river seperates your path...')
+        
         river = input("Do you wish to swim across or keep looking for another way across? (swim/search)").lower
         
         if river == "swim":
@@ -53,9 +53,11 @@ if should_we_play == "y" or should_we_play == "yes":
             print("You raft across the river and get to the otherside.")
             print("You get to the castle and fall head over heals for a maiden on the top corner of the castle tower.")
     else:
-        ("Sorry not a vallid response, try again.")
+        print("Sorry not a vallid response, try again.")
 
 
     # #otherwise, the game will end
-else:
+elif should_we_play == "no".lower():
     print("We are not going to play...goodbye!")
+else:
+    print("Please select an option")
